@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.3.0'
+}
+
+group 'com.nextplugins.nextreport'
+version '1.0.0'
+
+tasks.build.dependsOn('shadowJar')
+
+repositories {
+    mavenCentral()
+
+    // spigot
+
+    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url = 'https://oss.sonatype.org/content/groups/public/' }
+
+    // libs
+
+    maven { url = 'https://jitpack.io/' }
+}
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:1.18-R0.1-SNAPSHOT"
+
+    implementation 'com.github.Yuhtin:update-checker:1.2'
+    implementation 'com.github.HenryFabio.configuration-injector:bukkit:1.0.2'
+    implementation 'com.github.HenryFabio:inventory-api:main-SNAPSHOT'
+
+    implementation 'com.github.SaiintBrisson.command-framework:bukkit:1.2.0'
+
+    def lombok = 'org.projectlombok:lombok:1.18.24'
+
+    compileOnly lombok
+    annotationProcessor lombok
+}
+
+bukkit {
+    name = "NextReport"
+    main = 'com.nextplugins.report.NextReport'
+    authors = ['NextPlugins']
+    website = 'https://nextplugins.com.br'
+    version = "${project.version}"
+}
+
+shadowJar {
+    archiveName("${project.name}-${project.version}.jar")
+
+    relocate 'com.yuhtin.updatechecker', 'com.nextplugins.report.libs.updatechecker'
+
+    relocate 'com.henryfabio.minecraft.configinjector', 'com.nextplugins.report.libs.configinjector'
+    relocate 'com.henryfabio.minecraft.inventoryapi', 'com.nextplugins.report.libs.inventoryapi'
+
+    relocate 'me.saiintbrisson.minecraft.command', 'com.nextplugins.report.libs.command.common'
+    relocate 'me.saiintbrisson.bukkit.command', 'com.nextplugins.report.libs.command.bukkit'
+}
+
+compileJava {
+    options.encoding('UTF-8')
+
+    sourceCompatibility('1.8')
+    targetCompatibility('1.8')
+}

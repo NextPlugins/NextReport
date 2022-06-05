@@ -1,0 +1,18 @@
+player:
+  success: '&aVocê denunciou %player% com sucesso.'
+  already: '&cVocê já denunciou %player%.'
+  not-found: '&cJogador %player% não encontrado.'
+  himself: '&cVocê não pode denunciar a si mesmo... ou pode?'
+
+admin:
+  alert:
+    - '&c&lDENÚNCIA'
+    - '&c'
+    - '&c  * %author% denunciou %player%.'
+    - '&c  * Motivo: &f%reason%'
+    - '&c  * Servidor: &f%server%'
+    - '&c'
+  bungee-teleport: '&e%player% está em outro servidor, teletransportando...'
+  offline: '&c%player% não está on-line agora.'
+  success: '&aVocê foi teletransportado até %player%.'
+  delete: '&aDenúncia deletada com sucesso.'

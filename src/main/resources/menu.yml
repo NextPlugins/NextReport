@@ -1,0 +1,59 @@
+report-list:
+  title: 'Denúncias (%current_page%/%last_page%)'
+  size: 6
+  items:
+    player-head:
+      fill-mode: true
+      display-name: '&e%player%'
+      head-owner: '%player%'
+      lore:
+        - '&7Denunciado por &f%author%&7.'
+        - '&7'
+        - '&7Motivo: &f%reason%'
+        - '&7Servidor: &f%server%'
+    next-page:
+      slot: 54
+      item: ARROW
+      display-name: '&ePróxima'
+    previous-page:
+      slot: 46
+      item: ARROW
+      display-name: '&eAnterior'
+
+reason-list:
+  title: 'Motivos'
+  size: 3
+  items:
+    reason:
+      fill-mode: true
+      item: PAPER
+      display-name: '&e%reason%'
+
+report:
+  title: 'Denúncia sob %player%'
+  size: 3
+  items:
+    player-head:
+      slot: 11
+      display-name: '&e%player%'
+      head-owner: '%player%'
+      lore:
+        - '&7Denunciado por &f%author%&7.'
+        - '&7'
+        - '&7Motivo: &f%reason%'
+        - '&7Servidor: &f%server%'
+  teleport:
+    slot: 14
+    item: FEATHER
+    display-name: '&aTeleportar'
+    lore:
+      - '&7Você será levado'
+      - '&7até &f%player%&e.'
+      - '&7'
+      - '&c* Caso o jogador esteja'
+      - '&cem outro servidor, você'
+      - '&cserá levado até lá.'
+  delete:
+    slot: 15
+    item: BARRIER
+    display-name: '&cDeletar'

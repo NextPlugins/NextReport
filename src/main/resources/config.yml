@@ -1,0 +1,11 @@
+bungee-mode:
+  enabled: false
+  server-name:
+    bungee: "MyServer1"
+    display: "RankUp"
+
+expire:
+  enabled: true
+  time:
+    in: 10
+    unit: MINUTES
