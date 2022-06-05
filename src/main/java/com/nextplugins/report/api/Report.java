@@ -13,7 +13,8 @@ import java.util.concurrent.TimeUnit;
 @Getter
 public class Report {
 
-    private final UUID id;
+    @Builder.Default private final UUID id = UUID.randomUUID();
+
     private final Player author;
     private final Player player;
     private final ReportReason reason;
