@@ -26,7 +26,7 @@ public final class InventoryValue implements ConfigurationInjectable {
     @ConfigField("report-list.items.player-head.fill-mode") private boolean reportListFillMode;
 
     @ConfigField("reason-list.title") private String reasonListTile;
-    @ConfigField("reason-list.size") private int reasonListTitle;
+    @ConfigField("reason-list.size") private int reasonListSize;
 
     @ConfigField("reason-list.items.player-head.fill-mode") private boolean reasonListFillMode;
 

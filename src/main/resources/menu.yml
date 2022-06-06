@@ -30,7 +30,7 @@ reason-list:
       display-name: '&e%reason%'
 
 report:
-  title: 'Denúncia sob %player%'
+  title: 'Denúncia - Informações'
   size: 3
   items:
     player-head:
